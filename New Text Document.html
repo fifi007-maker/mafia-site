@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>لیست خلافکاران 😎</title>
+<style>
+  :root {
+    --bg: #121212;
+    --card: #1e1e1e;
+    --accent: #00e0ff;
+    --text: #f5f5f5;
+    --danger: #ff5555;
+    --gap: 15px;
+  }
+
+  * { box-sizing: border-box; }
+  body { 
+    margin:0; 
+    font-family: "Vazir", sans-serif; 
+    background: var(--bg); 
+    color: var(--text);
+  }
+
+  header {
+    background: linear-gradient(90deg, var(--accent), #00bfff);
+    color: #000;
+    text-align:center;
+    padding: 20px;
+    font-size:1.3rem;
+    font-weight:bold;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 15px 50px;
+  }
+
+  /* لیست کارت‌ها */
+  .grid {
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  }
+  .card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  }
+  .card img {
+    width: 180px;
+    height: 180px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 12px;
+  }
+  .card h3 { margin:0; font-size:1.1rem; text-align:center; }
+  .card p { margin:5px 0 0; color:#aaa; font-size:0.9rem; text-align:center; }
+
+  /* صفحه جزئیات */
+  .profile {
+    display: none;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    margin-top: 20px;
+  }
+  .profile img {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+  }
+  .profile h2 { margin:10px 0 5px; color: var(--accent); }
+  .profile h3 { margin:12px 0 5px; font-size:1rem; }
+  .profile p { font-size:0.95rem; line-height:1.4rem; }
+
+  .back-btn {
+    margin-top: 20px;
+    background: var(--accent);
+    border: none;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight:bold;
+  }
+  .back-btn:hover { background:#00b5cc; }
+
+  @media (max-width:520px){
+    .card img, .profile img { width:140px; height:140px; }
+  }
+</style>
+</head>
+<body>
+<header>لیست خلافکاران 😎</header>
+<div class="container">
+
+  <!-- صفحه اصلی -->
+  <div id="main" class="grid">
+    <div class="card" onclick="showProfile('mahdi')">
+      <img src="mahdi.jpg" alt="مهدی ایزن">
+      <h3>مهدی ایزن</h3>
+      <p>کلیک کن برای دیدن جزئیات</p>
+    </div>
+    <div class="card" onclick="showProfile('majed')">
+      <img src="majed.jpg" alt="ماجد ایزن">
+      <h3>ماجد ایزن</h3>
+      <p>کلیک کن برای دیدن جزئیات</p>
+    </div>
+    <div class="card" onclick="showProfile('hosein')">
+      <img src="hosein.jpg" alt="حسین سواری">
+      <h3>حسین سواری</h3>
+      <p>کلیک کن برای دیدن جزئیات</p>
+    </div>
+  </div>
+
+  <!-- مهدی -->
+  <div id="mahdi" class="profile">
+    <img src="mahdi.jpg" alt="مهدی ایزن">
+    <h2>آقای مهدی ایزن</h2>
+    <h3>بیوگرافی:</h3>
+    <p>یک فرد مومن که ی زمانی عضو اصحاب کهف بود ولی الان ترک کرده و شب و روزش شده پلی دادن با رها خانمش. بله این پلیر مدت‌هاست که فیفا پلی نداده.</p>
+    <h3>اخلاق:</h3>
+    <p>این فرد فقط با پاریس میتونه بازی کنه، جونش برای امباپه درمی‌ره. عشقش امباپس. بدون اون تیم فلجه! معروف به "مهدی چیپی" هست — فرقی نمی‌کنه دروازه‌بان توی گل باشه یا نه، چیپشو میزنه و گل میشه 😄</p>
+    <button class="back-btn" onclick="goBack()">برگشت</button>
+  </div>
+
+  <!-- ماجد -->
+  <div id="majed" class="profile">
+    <img src="majed.jpg" alt="ماجد ایزن">
+    <h2>آقای ماجد ایزن</h2>
+    <h3>بیوگرافی:</h3>
+    <p>این چهره ماجد ایزن ملقب به ماجد زاویه، ماجد سر توپ و ماجد کاکیرو هست؛ یک فرد مومن، داداشمون تا ۱۲ ظهر کالاف میزنه، ۶ عصر بیدار میشه، انگار عضو اصحاب کهفه 😴 خلاصه مرد خوبیه 😄</p>
+    <h3>اخلاق:</h3>
+    <p>زود اخلاقشو می‌بازه، عصبی بشه دسته رو پرت می‌کنه اون‌طرف 😆</p>
+    <button class="back-btn" onclick="goBack()">برگشت</button>
+  </div>
+
+  <!-- حسین -->
+  <div id="hosein" class="profile">
+    <img src="hosein.jpg" alt="حسین سواری">
+    <h2>آقای حسین سواری</h2>
+    <h3>بیوگرافی:</h3>
+    <p>یک فرد مانند ماجد؛ خواباشون با ساعت آمریکا تنظیمه. ایشونم عضو اصحاب کهفه 😴</p>
+    <h3>اخلاق:</h3>
+    <p>این پلیر تو فیفا اگه دو گل بخوره، بازی خشن اونو مشاهده می‌کنیم 😈 تکل‌های عصبی برای زود گرفتن توپ. اگه ببره هم همینطوره — نمی‌ذاره حریف به گل نزدیک بشه! شعارش: توپ رد بشه ولی بازیکن نه 😤</p>
+    <button class="back-btn" onclick="goBack()">برگشت</button>
+  </div>
+
+</div>
+
+<script>
+function showProfile(id){
+  document.getElementById('main').style.display='none';
+  document.querySelectorAll('.profile').forEach(p=>p.style.display='none');
+  document.getElementById(id).style.display='block';
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function goBack(){
+  document.querySelectorAll('.profile').forEach(p=>p.style.display='none');
+  document.getElementById('main').style.display='grid';
+}
+</script>
+</body>
+</html>
